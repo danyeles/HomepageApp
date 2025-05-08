@@ -19,11 +19,8 @@ pipeline {
                     docker run -d \
                         --restart always \
                         --name ${CONTAINER_NAME} \
-                        -e HOMEPAGE_ALLOWED_HOSTS=* \
                         -p 3000:3000 \
-                        -e PUID=${PUID} \
-                        -e PGID=${PGID} \
-                        -e TZ=${TZ} \
+                        -e HOMEPAGE_ALLOWED_HOSTS=* \
                         -v /var/run/docker.sock:/var/run/docker.sock:ro \
                         -v ${CONFIG_PATH}:/config \
                         ${DOCKER_IMAGE}
