@@ -1,6 +1,6 @@
 pipeline {
     agent any
- 
+    
     environment {
         DOCKER_IMAGE = 'ghcr.io/gethomepage/homepage:latest'
         CONTAINER_NAME = 'homepage'
@@ -19,7 +19,7 @@ pipeline {
                     docker run -d \
                         --restart always \
                         --name ${CONTAINER_NAME} \
-                        -e HOMEPAGE_ALLOWED_HOSTS=gethomepage.dev
+                        -e HOMEPAGE_ALLOWED_HOSTS=gethomepage.dev \
                         -p 3000:3000 \
                         -e PUID=${PUID} \
                         -e PGID=${PGID} \
