@@ -19,7 +19,7 @@ pipeline {
                     docker run -d \
                         --restart always \
                         --name ${CONTAINER_NAME} \
-                        -e HOMEPAGE_ALLOWED_HOSTS=gethomepage.dev,192.168.100.60:3000 \
+                        -e HOMEPAGE_ALLOWED_HOSTS=* \
                         -p 3000:3000 \
                         -e PUID=${PUID} \
                         -e PGID=${PGID} \
